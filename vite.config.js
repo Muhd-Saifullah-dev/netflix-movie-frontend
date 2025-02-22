@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    
   ],
   assetsInclude: ['**/*.m4v'],
+  
 })
