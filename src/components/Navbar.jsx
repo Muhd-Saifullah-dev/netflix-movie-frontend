@@ -4,7 +4,9 @@ import NetflixLogo from "/public/netflix-logo.png";
 import { Search, LogOut, Menu } from "lucide-react";
 import AvatarImage from "/public/avatar2.jpg";
 import { UseContentStore } from "../store/Content";
+import { useAuthStore } from "../store/authUser";
 const Navbar = () => {
+ const {LogoutUser}= useAuthStore()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -41,7 +43,7 @@ const Navbar = () => {
           <Search className="size-6 cursor-pointer" />
         </Link>
         <img src={AvatarImage} alt="Avatar Image" className="h-8 rounded cursor-pointer" />
-        <LogOut className="size-6 cursor-pointer" />
+        <LogOut className="size-6 cursor-pointer" onClick={()=>LogoutUser()}/>
         {/* Mobile Menu Toggle */}
         <div className="sm:hidden">
           <Menu className="size-6 cursor-pointer" onClick={toggleMobileMenu} />

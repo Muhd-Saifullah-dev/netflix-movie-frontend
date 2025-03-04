@@ -7,5 +7,11 @@ export default defineConfig({
     react(),
   ],
   assetsInclude: ['**/*.m4v'],
-  
+  server:{
+    proxy:{
+      "/api":{
+        target:"http://localhost:8000"
+      }
+    }
+  }
 })
