@@ -13,7 +13,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   const {ContentType, SetContentType}=UseContentStore()
- 
+  
 
   return (
     <header className="max-w-6xl mx-auto flex flex-wrap items-center justify-between p-4 h-20 relative z-50">
@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link to="/" className="hover:underline" onClick={()=>SetContentType("tv")}>
             Tv Shows
           </Link>
-          <Link to="/" className="hover:underline">
+          <Link to="/history" className="hover:underline">
             Search History
           </Link>
         </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
             Tv Shows
           </Link>
           <Link
-            to={"/"}
+            to={"/history"}
             className="block hover:underline p-2"
             onClick={toggleMobileMenu}
           >

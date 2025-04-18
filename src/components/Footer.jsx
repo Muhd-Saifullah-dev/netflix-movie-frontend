@@ -9,7 +9,7 @@ const Footer = () => {
                 <a href="https://github.com/Muhd-Saifullah-dev"
                 target='_blank'
                 className='font-medium underline underline-offset-4 ml-1'
-                >you</a>
+                >Muhd-Saifullah</a>
                 . The source code is available on
                 <a href="https://github.com/Muhd-Saifullah-dev"
                 rel='noreferrer'

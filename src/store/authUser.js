@@ -16,8 +16,7 @@ export const useAuthStore=create((set)=>({
         try{
             const response=await axios.post("/api/v1/auth/signup",credientials)
             const data=await response.data
-            console.log("response :: ",data.response.message)
-            console.log("response data :: ",response.status)
+          
             const userData=data.response.data.user
             set({user:userData,loading:false,isAuth:true})
             toast.success(data.response.message)
@@ -38,8 +37,7 @@ export const useAuthStore=create((set)=>({
         try {
             const response=await axios.post("/api/v1/auth/login",credientials)
             const data=await response.data
-            console.log("response :: ",data.response.message)
-            console.log("response data :: ",response.status)
+           
             const userData=data.response.data.user
             set({user:userData,loading:false,isAuth:true})
             toast.success(data.response.message)
@@ -71,21 +69,13 @@ export const useAuthStore=create((set)=>({
         try {
             const response=await axios.get('/api/v1/auth/auth-check')
             const data=await response.data
-            console.log("data in auth check :: ",data)
+          
             set({user:data.response.data,isAuth:true,isCheckingAuth:false})
             toast.success(data.response.message)
         } catch (error) {
-            set({isAuth:false,isCheckingAuth:false})
-            if(error.response?.data?.response?.status !==201){
-                toast.error(error.response?.data?.response?.message)
-            }
-            else{
-                console.log("error in auth check :: ",error)
-                toast.error("Authentication failed")
-            }
-         
-            
-        }
+            console.log("eror in authCheck :: ",error)
+            set({isCheckingAuth:false})
+         }
     }
 }))
 

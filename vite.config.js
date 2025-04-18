@@ -5,12 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [
     react(),
+  
   ],
   assetsInclude: ['**/*.m4v'],
   server:{
     proxy:{
-      "/api":{
-        target:"http://localhost:8000"
+      '/api':{
+       target: 'http://localhost:8080',
+        changeOrigin:true,
+        secure: false,
       }
     }
   }
